@@ -1,84 +1,12 @@
-\documentclass[UTF8,twocolumn,fancyhdr]{ctexart}
+\documentclass[cn]{inkpaper}
 \title{关于在初中数学竞赛操作题中的不变量的求解方法及其用途的探究}
 \author{Moyan Liang,张江集团学校奥数班成员}
 \date{\today}
-\usepackage{amsthm,amsfonts,siunitx}
-\usepackage{etoolbox}
-\usepackage{asymptote}
-\usepackage{newtxtext,newtxmath}
-\usepackage{abstract}
-\usepackage{cite}
-\usepackage[colorlinks,linkcolor=blue]{hyperref}
-\renewcommand{\abstractnamefont}{\normalfont\bfseries}
-\renewcommand{\abstractnamefont}{\normalfont}
-\makeatletter
-
-\renewcommand*\maketitle{%
-	\thispagestyle{empty}
-	\let\footnotesize\small
-	%\let\footnoterule\hrule\vspace{5pt}
-    \let \footnote \thanks
-    
-	\begin{center}
-        {\LARGE \@title \par}
-        \vspace{2pt}
-        {\Large \@author \par}
-    \end{center}
-    
-	\@thanks
-	\vfil\null
-	\setcounter{footnote}{0}%
-	\cleardoublepage
- \global\let\thanks\relax
- \global\let\maketitle\relax
- \global\let\@thanks\@empty
- \global\let\@author\@empty
- \global\let\@date\@empty
- \global\let\@title\@empty
- \global\let\title\relax
- \global\let\author\relax
- \global\let\date\relax
- \global\let\and\relax
-
-}
-\ctexset{
-    section = {
-        number=\arabic{section},
-        name=\S,
-        format+=\zihao{-4}
-    },
-    subsection = {
-        number=\roman{subsection},
-        name={(,).},
-        format+=\zihao{-4}\textit
-    }
-}
-\theoremstyle{plain}% default
-	\newtheorem{theorem}{定理}[section] %
-	\newtheorem{lemma}[theorem]{引理} %
-	\newtheorem{proposition}[theorem]{命题} %
-	\newtheorem*{corollary}{推论} %
-	\theoremstyle{definition} %
-	\newtheorem{definition}{定义}[section] %
-	\newtheorem{conjecture}{猜想}[section] %
-    \newtheorem{example}{例}[section] %
-    \newtheorem{problem}{题}[section]
-    \newtheorem*{problema}{引题}
-	\theoremstyle{remark} %
-	\newtheorem*{remark}{\normalfont\bfseries 评论} %
-	\newtheorem*{note}{\normalfont\bfseries 注} %
-    \newtheorem{case}{\normalfont\bfseries 案例} %
-    \newtheorem*{solution}{解}
-	\renewcommand*{\proofname}{\normalfont\bfseries\color{black}证明} %
-    \renewcommand*{\qed}{\begin{flushright}
-        $\square$
-    \end{flushright}}
-    
-\makeatother
-
+\entitle{Research about the computation of invariants and its uses in secondary school MOs}
 \begin{document}
-    
-    \twocolumn[\maketitle
+
+    \twocolumn[
+        \maketitle
     \begin{onecolabstract}
         在初中数学竞赛中常常会出现一种操作题,如移动硬币,分发糖果等.他们皆是先描述某些日常物品的移动,
         而最后问由一种物品状态到另一种状态的转移的可能性.
