@@ -70,7 +70,7 @@
     },
     subsubsection = {
         number=\roman{subsubsection},
-        format=\raggedright\zihao{-4}\textit,
+        format=\raggedright\normalsize\textit,
         name={(,)}
     }
 }

@@ -50,6 +50,7 @@
 在寻找不变量的过程中,我们需要在变量之中看出规律来.如题\ref{pbl:qar},是从无理式(准确的来说,是根式)中寻找规律;
 在此类题目中,我们需要求运算前的三个数与运算后的三个数的$n$\footnote{此$n$是根式的次数.例如,在题\ref{pbl:qar}中,就是通过求其平方和.}次方和的关系.
 \subsection{多项式中的"不变量"}
+\subsubsection{判别式}
 在下一题中,我们会发现纯粹的寻找不变量的方法是无用的;我们必须通过寻找判别式中的规律
 中的不变量来寻找答案.
 \begin{problem}
@@ -64,10 +65,75 @@
     我们考虑判别式$\Delta$.第一种运算显然不改变$\Delta$.第二种运算不改变多项式两根之差.现有$$\Delta=b^2-4ac=a^2\left[\left(\dfrac{b}{a}\right)^2-4\dfrac{c}{a}\right]$$,而$-\dfrac{b}{a}=x
     _1+x_2$,$\dfrac{c}{a}=x_1x_2$,从而$\delta=a^2\left( x_1-x_2 \right)^2.$即第二种运算不改变$\delta.$而两个二次三项式的判别式为$9$与$5$,不能达到.
 \end{solution}
-\section{奇偶不变量与余数不变量}
-在一些情况下,我们不能找到恒为定值的量,但我们可以考虑模算术.常见的模有:$2$(奇偶性),$4$(平方数的判断)等.下一道题中就是通过$\pmod 2$找出不变量,并解决问题.
-\begin{problem}
-    10名乒乓球运动员参加循环赛,每两名运动员之间都要进行比赛.在循环赛过程中,1号运动员获胜$x_1$次,失败$y_1$次;2号运动员获胜$x_2$次,失败$y_2$次,等等.求证:
-$$x_1^2+x_2^2+…+x_{10}^2=y_1^2+y_{2}^2+…+y_{10}^2.$$
-
+\subsubsection{整式的加减}
+\begin{problem}\footnote{选自罗老师提供的资料.}
+    若多项式$f(x),g(x)$分别为:
+    \begin{enumerate}
+        \item $f(x)=x^2+x,g(x)=x^2+2;$
+        \item $f(x)=2x^2+x,g(x)=2x;$
+        \item $f(x)=x^2+x,g(x)=x^2-2;$
+    \end{enumerate}
+    用\textbf{加,减,乘}能否从$f(x),g(x)$中得$h(x)=x?$
 \end{problem}
+\begin{solution}
+    对$f,g$用这三种运算,我们得到多项式\begin{equation}\label{eqn:pol}
+        P(f(x),g(x))=x,
+    \end{equation}
+    它应该对任意$x$成立,对于(1),(2),我们给出特定的$x$的值,使\eqref{eqn:pol}不成立.
+    \begin{enumerate}
+        \item 在(1)中$f(2)=g(2)=6,$在对6反复用三种运算时，总是得到6的倍数，但\eqref{eqn:pol}的右边是2.
+        \item 在(2)中$f(\dfrac{1}{2})=g(\dfrac12)=1$,\eqref{eqn:pol}左边为整数,右边为分数.
+        \item 在(3)中$$(f-g)^2+2g-3f=x.$$
+    \end{enumerate}
+    
+    
+\end{solution}
+\subsection{奇偶不变量与余数不变量}
+在一些情况下,我们不能找到恒为定值的量,但我们可以考虑模算术.常见的模有:$2$(奇偶性),$4$(平方数的判断)等.
+接下来分一些模型来讨论.
+\subsubsection{存取模型}
+所谓"存取模型"是指在某些物品在被使用去某些数量后会自动填充,求最后会不会用完.这种题目主要是通过同余的方法来解决.
+
+下一道题中就是通过$\pmod 3$找出不变量,并解决问题.
+\begin{problem}
+    一条龙有100个头.一名武士一剑可以砍掉它的15,17,20或5个头,就在这四种情况下,在龙的肩上又分别会长出24,2,14或17个新的头.如果把头都砍光时,龙就死了.龙会死吗?
+\end{problem}
+\begin{solution}
+    \kaishu{显然是不会的,下面给出证明.}\songti
+    由于$$15-24\equiv 17-2\equiv 20-14\equiv 5-17\equiv 0\pmod3,$$故头$\mod 3$的余数不会变.而$100\equiv 1\pmod3,$龙不会死.
+\end{solution}
+\subsubsection{博弈模型}
+在不变量原理中的博弈模型就是指从任意一种初状态皆能到最终状态的可能性.
+
+下一道题中就是通过$\pmod 2$找出不变量,并解决问题.
+\begin{problem}
+    一个圆分为6个扇形(图\ref{fig:side:b}).每个扇形中放有一枚棋子.每一步允许将任何两枚棋子分别移入相邻的扇形.试问,能否通过这种操作,把6枚棋子全都移到一个扇形之中?
+    \begin{figure}
+        \begin{minipage}[t]{0.5\linewidth}
+        \centering
+        \includegraphics{graphics/circ1.png}
+        \caption{初始状态}
+        \label{fig:side:a}
+        \end{minipage}%
+        \begin{minipage}[t]{0.5\linewidth}
+        \centering
+        \includegraphics{graphics/circ2.png}
+        \caption{分析}
+        \label{fig:side:b}
+        \end{minipage}
+        \begin{minipage}[t]{0.5\linewidth}
+            \centering
+            \includegraphics{graphics/circ3.png}
+            \caption{移动后状态}
+            \label{fig:side:c}
+            \end{minipage}
+        \end{figure}
+        
+\end{problem}
+\begin{solution}
+    不能.设第$n$个扇形中有棋子$p_n$个.考察量$$
+        M:=\sum n\cdot p_n
+    $$
+    在将一枚棋子移入相邻的扇形中时$M$的奇偶性改变了.这说明每一次移动时$M\pmod2$不变.
+    但是,$$M_\text{初始}=21,\quad M_\text{目标}=6N(N\in\mathbb{Z}^{+}).$$21不被6整除,故目标不能达成.
+\end{solution}
