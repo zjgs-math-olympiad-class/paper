@@ -2,7 +2,7 @@
 
 \ProvidesPackage{inkpaper}[2019/5/26 v 0.01 Paper template.]
 
-\LoadClass[UTF8,fancyhdr,twocolumn]{ctexart}
+\LoadClass[UTF8,fancyhdr,twoside,twocolumn]{ctexart}
 \RequirePackage{xcolor}
 \RequirePackage{amsthm,amsfonts,siunitx}
 \RequirePackage{etoolbox,xstring,mfirstuc,textcase}
@@ -76,9 +76,14 @@
 }
 
 \RequirePackage{fancyhdr}
+\markboth{\leftmark}{\rightmark}
 \fancyhf{}
-\lhead{\textnormal{\kaishu\rightmark}} 
-\rhead{--\ \thepage\ --} 
+\fancyhead[CO]{\rightmark}
+\fancyhead[LE,RO]{$\cdot$\, \thepage\, $\cdot$}
+\fancyhead[CE]{\leftmark}
+\renewcommand{\headrulewidth}{0.4pt}
+% \lhead{\textnormal{\kaishu\rightmark}} 
+% \rhead{--\ \thepage\ --} 
 \pagestyle{fancy} 
 % \sectionmark 的重定义需要在 \pagestyle 之后生效 
 \renewcommand\sectionmark[1]{% 
