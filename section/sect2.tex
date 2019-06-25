@@ -137,6 +137,27 @@
     在将一枚棋子移入相邻的扇形中时$M$的奇偶性改变了.这说明每一次移动时$M\pmod2$不变.
     但是,$$M_\text{初始}=21,\quad M_\text{目标}=6N(N\in\mathbb{Z}^{+}).$$21不被6整除,故目标不能达成.
 \end{solution}
+\subsubsection{绝对值模型}
+\begin{problem}
+    有一台单功能计算器,对任意两个整数只能完成求差后再取绝对值的运算,其运算过程是:输入第一个整数$x_1$,只显示不运算,接着再输入整数$x_2$后则显示$|x_1-x_2|$的结果.比如依次输入$1,2$,则输出的结果是$|1-2|=1$;此后每输入一个整数都是与前次显示的结果进行求差后再取绝对值的运算.
+
+    现将$1~n$这$n(n\geq 3)$个整数输入计算器中,其结果为$m$.求$m$的最大与最小值.
+\end{problem}
+\begin{solution}
+    首先,我们指出,在任意的组合下\begin{equation}
+        m\equiv \sum x_i\pmod2.
+    \end{equation}
+    \begin{proof}
+        在$m$的展开式中有一些带负号,记为$x_n^{-}.$另一些带正号,记为$x_n^{+}.$则
+        $$\sum x_i\equiv\sum x_i^{+}-\sum x_i^{-}+2\left( \sum x_i^{-} \right)
+        \equiv\sum x_i^{+}-\sum x_i^{-}\pmod 2.$$
+    \end{proof}
+    此时只需分两种情况讨论即可.
+    \begin{enumerate}
+        \item $\sum x_i=\dfrac{1}{2}n(n+1)$为奇数.此时
+        \item $\sum x_i=\dfrac{1}{2}n(n+1)$为奇数.此时
+    \end{enumerate}
+\end{solution}
 \subsection{半不变量:函数的单调性与有界性}
 在某些"连续"的问题中,例如函数问题中,我们的初始值与目标可能超出整数范围\footnote{需要指出的是,在整数域内一般不变量与取余也有可能解决不了问题.},甚至于扩大到全部实数域.这时,余数与一般不变量都起不了作用;我们可以通过寻找问题中单调变化的量以及有界的量\footnote{从高等数学的角度,函数的单调性与有界性是紧紧的联系着的:例如,$f(x)$在$\mathcal{X}$内单调递增,其导函数$$f^{\prime}(x)=\dfrac{dy
 }{dx}(x)$$恒大于0.}从而解决问题.
