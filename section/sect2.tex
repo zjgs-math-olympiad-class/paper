@@ -88,11 +88,14 @@
         &\equiv\sum x_i^{+}-\sum x_i^{-}\pmod 2.
         \end{align*}
        
-    \end{proof}
-    此时只需分两种情况讨论即可.
+    \end{proof}注意到$$\Bigg|\Big|\big|1-2\big|-4\Big|-3\Bigg|=0.$$
+    这方法是可以平移的,例如$$\Bigg|\Big|\big|\left( n+1 \right)-\left( n+2 \right)\big|-4\Big|-3\Bigg|=0.$$
+    此时只需分四种情况讨论即可.
     \begin{enumerate}
-        \item $\sum x_i=\dfrac{1}{2}n(n+1)$为奇数.此时
-        \item $\sum x_i=\dfrac{1}{2}n(n+1)$为偶数.此时
+        \item $n=4k.$此时$$\sum x_i=\dfrac{1}{2}n(n+1)$$为偶数,$m$为偶数.此时每4个正整数配成一对,最小值为0.前三个整数可以配成0,后每4个整数可以配成0,剩下一个整数$n$,最大值为$n$.
+        \item $n=4k+1.$此时$$\sum x_i=\dfrac{1}{2}n(n+1)$$为奇数,$m$为奇数.此时除$1$外每4个数配成一对,最小值为1.前每4个整数可以配成0,剩下一个整数$n$,最大值为$n$.
+        \item $n=4k+2.$此时$$\sum x_i=\dfrac{1}{2}n(n+1)$$为奇数,$m$为奇数.此时从$1$开始每4个数配成一对,留下$n,n+1$两个数.故最小值为1.此时从$2$开始每4个数配成一对,留下$1,n$两个数.故最大值为$n-1$.
+        \item $n=4k+3.$此时$$\sum x_i=\dfrac{1}{2}n(n+1)$$为偶数,$m$为偶数.仿上易得最小值为$0$,最大值为$n-1.$
     \end{enumerate}
 \end{solution}
 \subsubsection{移动不变模型}
