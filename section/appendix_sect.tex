@@ -1,0 +1,22 @@
+\section*{附录}
+\subsection{引题(\ref{pbl:ini})的构造方法}
+先从最简单的情况说起.记每个碗为$(A,P,\cdots)$,其中,$A$是苹果,$P$是梨.$a=1,b=2$时:
+	\begin{align*}
+	(A)(P)(P) &\Rightarrow ()(A,P,P)()\\
+	&\Rightarrow (P)(P)(A).
+	\end{align*}
+	将这种情形推广到$a=n,b=2$时(其中$n$为任意正整数),便成
+	\begin{align*}
+	\underbrace{(A)\cdots(A)}_{n}(P)(P) &\Rightarrow \underbrace{(A)\cdots(A)}_{n-1}(A,P,P)()\\
+	&\Rightarrow \underbrace{(A)\cdots(A)}_{n-1}(P)(P)(A)\\
+	&\Rightarrow \cdots\\
+	&\Rightarrow (P)(P)\underbrace{(A)\cdots(A)}_{n}.
+	\end{align*}
+	这让我们很易推广到$a=n,b=2j$($n,j$皆为正整数)的情况:
+	\begin{align*}
+	\underbrace{(A)\cdots(A)}_{n}\underbrace{(P)\cdots(P)}_{2j}&\infer\cdots\\
+	&\infer(P)(P)\underbrace{(A)\cdots(A)}_{n}\underbrace{(P)\cdots(P)}_{2j-2}\\
+	&\infer\cdots\\
+	&\infer\underbrace{(P)\cdots(P)}_{2j}\underbrace{(A)\cdots(A)}_{n}.
+	\end{align*}
+	若梨子数是偶数而苹果数为奇,则将这算法反过来操作就可以了.

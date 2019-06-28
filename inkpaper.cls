@@ -133,6 +133,7 @@
 	\renewcommand\figurename{Fig.} %
 	\renewcommand\tablename{Tab.}
 }{\relax}    
+\RequirePackage{hhline}
 \renewcommand*{\qed}{\begin{flushright}
         $\square$
     \end{flushright}}
